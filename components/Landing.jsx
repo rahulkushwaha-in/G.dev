@@ -9,7 +9,7 @@ export function Landing() {
     (<div className="flex flex-col min-h-[100dvh]">
      
       <main className="flex-1">
-        <section className="bg-gray-950 text-gray-50 py-12 md:py-24 lg:py-32">
+        <section className="bg-gray-950 text-gray-50 py-10 md:py-15 lg:py-20">
           <div
             className="w-full px-4 md:px-6 grid gap-8 md:gap-12 lg:grid-cols-2 items-center justify-center">
             <div className="space-y-4">
@@ -197,7 +197,7 @@ export function Landing() {
                 }}
                 width={600} />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Explore Our Blog</h2>
               <p className="text-gray-300 max-w-[600px] text-lg md:text-xl">
                 Stay up-to-date with the latest trends, insights, and developments in the tech world by reading our
@@ -213,7 +213,7 @@ export function Landing() {
         </section>
         
         {/* why learn from GeeksforGeeks.dev */}
-        <section className="bg-gray-950 text-gray-50 py-12 md:py-24 lg:py-32">
+        <section className="bg-gray-950 text-gray-50 py-10 md:py-15 lg:py-20">
           <div
             className="w-full px-4 md:px-6 grid gap-8 md:gap-12 lg:grid-cols-2 items-center justify-center">
             <div className="space-y-4">

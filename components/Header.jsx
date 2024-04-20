@@ -6,22 +6,22 @@ export default function Header(){
         <>
          <header
         className="sticky top-0 bg-gray-950 text-gray-50 px-4 lg:px-6 py-4 flex items-center justify-between">
-        <Link className="flex items-center gap-2" href="#">
+        <Link className="flex items-center gap-2" href="/">
           <BookIcon className="h-6 w-6" />
           <span className="text-xl font-semibold"><span className="text-blue-500 text-xs">GeeksforGeeks</span><span className="text-red-600 text-xl">.</span><span>dev</span></span>
         </Link>
         <nav className="hidden lg:flex gap-6">
-          <Link className="hover:underline" href="#">
+          <Link className="hover:underline" href="/">
             Tutorials
           </Link>
 
-          <Link className="hover:underline" href="#">
+          <Link className="hover:underline" href="/">
             Blog
           </Link>
-          <Link className="hover:underline" href="#">
+          <Link className="hover:underline" href="/about">
             About
           </Link>
-          <Link className="hover:underline" href="#">
+          <Link className="hover:underline" href="/contact">
             Contact
           </Link>
         </nav>

@@ -4,7 +4,7 @@ export default function Footer(){
     return (
         <>
         <footer className="bg-gray-950 sticky">
-  <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+  <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8 flex flex-col justify-between">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div>
           <span className="text-xl font-semibold"><span className="text-blue-500 text-xs">GeeksforGeeks</span><span className="text-red-600 text-xl">.</span><span className="text-white text-2xl">dev</span></span>

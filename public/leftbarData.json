@@ -1,0 +1,166 @@
+{
+  "react": [
+    {
+      "name": "React Dashboard",
+      "path": "/learn/react/dashboard",
+      "items": [
+        {
+          "name": "React General",
+          "path": "/learn/react/settings"
+        },
+        {
+          "name": "React Security",
+          "path": "/learn/react/security"
+        },
+        {
+          "name": "React Notifications",
+          "path": "/learn/react/notifications"
+        }
+      ]
+    },
+    {
+      "name": "React Transaction",
+      "path": "/learn/react/transaction"
+    },
+    {
+      "name": "React Payment",
+      "path": "/learn/react/payment"
+    },
+    {
+      "name": "React Accounts",
+      "path": "/learn/react/accounts"
+    },
+    {
+      "name": "React Settings",
+      "path": "/learn/react/settings",
+      "items": [
+        {
+          "name": "React General",
+          "path": "/learn/react/settings"
+        },
+        {
+          "name": "React Security",
+          "path": "/learn/react/security"
+        },
+        {
+          "name": "React Notifications",
+          "path": "/learn/react/notifications"
+        }
+      ]
+    },
+    {
+      "name": "React Help",
+      "path": "/react/settings/help",
+      "items": [
+        {
+          "name": "React FAQ",
+          "path": "/react/settings/help/faq"
+        },
+        {
+          "name": "React Contact",
+          "path": "/react/settings/help/contact"
+        }
+      ]
+    }
+  ],
+  "javascript": [
+    {
+      "name": "JavaScript Dashboard",
+      "path": "/learn/javascript/dashboard"
+    },
+    {
+      "name": "JavaScript Transaction",
+      "path": "/learn/javascript/transaction"
+    },
+    {
+      "name": "JavaScript Payment",
+      "path": "/learn/javascript/payment"
+    },
+    {
+      "name": "JavaScript Accounts",
+      "path": "/learn/javascript/accounts"
+    },
+    {
+      "name": "JavaScript Settings",
+      "path": "/learn/javascript/settings",
+      "items": [
+        {
+          "name": "JavaScript General",
+          "path": "/learn/javascript/settings"
+        },
+        {
+          "name": "JavaScript Security",
+          "path": "/learn/javascript/security"
+        },
+        {
+          "name": "JavaScript Notifications",
+          "path": "/learn/javascript/notifications"
+        }
+      ]
+    },
+    {
+      "name": "JavaScript Help",
+      "path": "/javascript/settings/help",
+      "items": [
+        {
+          "name": "JavaScript FAQ",
+          "path": "/javascript/settings/help/faq"
+        },
+        {
+          "name": "JavaScript Contact",
+          "path": "/javascript/settings/help/contact"
+        }
+      ]
+    }
+  ],
+  "css": [
+    {
+      "name": "css Dashboard",
+      "path": "/learn/css/dashboard"
+    },
+    {
+      "name": "css Transaction",
+      "path": "/learn/css/transaction"
+    },
+    {
+      "name": "css Payment",
+      "path": "/learn/css/payment"
+    },
+    {
+      "name": "css Accounts",
+      "path": "/learn/css/accounts"
+    },
+    {
+      "name": "css Settings",
+      "path": "/learn/css/settings",
+      "items": [
+        {
+          "name": "css General",
+          "path": "/learn/css/settings"
+        },
+        {
+          "name": "css Security",
+          "path": "/learn/css/security"
+        },
+        {
+          "name": "css Notifications",
+          "path": "/learn/css/notifications"
+        }
+      ]
+    },
+    {
+      "name": "css Help",
+      "path": "/css/settings/help",
+      "items": [
+        {
+          "name": "css FAQ",
+          "path": "/css/settings/help/faq"
+        },
+        {
+          "name": "css Contact",
+          "path": "/css/settings/help/contact"
+        }
+      ]
+    }
+  ]
+}

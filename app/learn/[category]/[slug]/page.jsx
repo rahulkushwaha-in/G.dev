@@ -1,8 +1,11 @@
+import SidebarLeft from '@/components/sidebar';
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Testing Page</div>
+    <div className="flex">
+      <h1>hi</h1>
+    </div>
   )
 }
 

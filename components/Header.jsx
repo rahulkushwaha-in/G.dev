@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Header() {
   return (
     <>
-      <header className="z-40 sticky top-0 bg-gray-950 text-gray-50 px-4 lg:px-6 py-4 flex items-center justify-between">
+      <header className="z-50 sticky top-0 bg-gray-950 text-gray-50 px-4 lg:px-6 py-4 flex items-center justify-between">
         <Link className="flex items-center gap-2" href="/">
           <BookIcon className="h-6 w-6" />
           <span className="text-xl font-semibold">
@@ -32,7 +32,7 @@ export default function Header() {
           </Link>
         </nav>
         <Button className="lg:hidden" size="icon" variant="outline">
-          <MenuIcon className="h-6 w-6" />
+          <MenuIcon className="h-4 w-4" />
           <span className="sr-only">Toggle navigation</span>
         </Button>
       </header>

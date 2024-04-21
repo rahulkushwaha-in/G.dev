@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 import SubMenuItem from "./sub-item";
 
-const SidebarItem = ({ item, categoryURL }) => {
+const SidebarItem = ({ item, currentCategoryURL }) => {
   const { name, items, path } = item;
   const [expanded, setExpanded] = useState(false);
   const router = useRouter();
@@ -20,14 +20,14 @@ const SidebarItem = ({ item, categoryURL }) => {
   };
   const isActive = useMemo(() => {
     if (items && items.length > 0) {
-      if (categoryURL === pathname) {
+      if (currentCategoryURL === pathname) {
         setExpanded(true);
         return true;
       }
     }
 
-    return categoryURL === pathname;
-  }, [items, categoryURL, pathname]);
+    return currentCategoryURL === pathname;
+  }, [items, currentCategoryURL, pathname]);
 
   return (
     <>
@@ -45,7 +45,7 @@ const SidebarItem = ({ item, categoryURL }) => {
       {expanded && items && items.length > 0 && (
         <div className="flex flex-col space-y-1 ml-10">
           {items.map((item) => (
-            <SubMenuItem key={categoryURL} item={item} />
+            <SubMenuItem key={currentCategoryURL} item={item} />
           ))}
         </div>
       )}

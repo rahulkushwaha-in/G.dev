@@ -39,6 +39,11 @@ export const post = {
       ]
     },
     {
+      name:'smallDescription',
+      title:'Small Description',
+      type: 'text', 
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',

@@ -1,41 +1,58 @@
+"use client"
 import Link from "next/link";
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   return (
     <>
-      <header className="z-50 sticky top-0 bg-gray-950 text-gray-50 px-4 lg:px-6 py-4 flex items-center justify-between">
-        <Link className="flex items-center gap-2" href="/">
+      {/* <header className="z-50 sticky top-0 bg-gray-950 text-gray-50 px-4 lg:px-6 py-4 flex items-center justify-between">
+      <Link href="/" passHref className="flex items-center gap-2">
           <BookIcon className="h-6 w-6" />
           <span className="text-xl font-semibold">
             <span className="text-blue-500 text-xs">GeeksforGeeks</span>
             <span className="text-red-600 text-xl">.</span>
             <span>dev</span>
           </span>
-        </Link>
-        <nav className="hidden lg:flex gap-6">
-          <Link className="hover:underline" href="/">
-            Tutorials
-          </Link>
-          <Link className="hover:underline" href="/tools">
-            Online Tools
-          </Link>
-
-          <Link className="hover:underline" href="/">
-            Blog
-          </Link>
-          <Link className="hover:underline" href="/about">
-            About
-          </Link>
-          <Link className="hover:underline" href="/contact">
-            Contact
-          </Link>
-        </nav>
-        <Button className="lg:hidden" size="icon" variant="outline">
-          <MenuIcon className="h-4 w-4" />
-          <span className="sr-only">Toggle navigation</span>
-        </Button>
-      </header>
+      </Link>
+      <nav className={`lg:flex gap-6 ${isMobileMenuOpen ? 'flex' : 'hidden'}`}>
+        <Link href="/" className="hover:underline" passHref>Tutorials</Link>
+        <Link href="/tools" className="hover:underline" passHref>Online Tools</Link>
+        <Link href="/" className="hover:underline" passHref>Blog</Link>
+        <Link href="/about" className="hover:underline" passHref>About</Link>
+        <Link href="/contact" className="hover:underline" passHref>Contact</Link>
+      </nav>
+      <button className="lg:hidden" onClick={toggleMobileMenu}>
+        <MenuIcon className="h-4 w-4" />
+        <span className="sr-only">Toggle navigation</span>
+      </button>
+    </header> */}
+     <header className="z-50 sticky top-0 bg-gray-950 text-gray-50 px-4 lg:px-6 py-4 flex items-center justify-between">
+      <Link href="/" passHref className="flex items-center gap-2">
+        <BookIcon className="h-6 w-6" />
+        <span className="text-xl font-semibold">
+          <span className="text-blue-500 text-xs">GeeksforGeeks</span>
+          <span className="text-red-600 text-xl">.</span>
+          <span>dev</span>
+        </span>
+      </Link>
+      <button className=" lg:hidden" onClick={toggleMobileMenu}>
+        <MenuIcon className="h-4 w-4" />
+        <span className="sr-only">Toggle navigation</span>
+      </button>
+      <nav className={`lg:flex lg:gap-6 ${isMobileMenuOpen ? 'flex flex-col' : 'hidden'}`}>
+        <Link href="/" className="hover:underline block" passHref>Tutorials</Link>
+        <Link href="/tools" className="hover:underline block" passHref>Online Tools</Link>
+        <Link href="/" className="hover:underline block" passHref>Blog</Link>
+        <Link href="/about" className="hover:underline block" passHref>About</Link>
+        <Link href="/contact" className="hover:underline block" passHref>Contact</Link>
+      </nav>
+    </header>
     </>
   );
 }

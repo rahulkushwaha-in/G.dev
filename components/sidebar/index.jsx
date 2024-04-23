@@ -1,34 +1,19 @@
 "use client";
-
-import leftbarData from "@/public/leftbarData.json"
 import { usePathname } from "next/navigation"
 import SidebarItem from "./item";
+import {getMenuContent} from "@/lib/utils";
 
 
 
-function getMenuContent(techStack) {
-  // const filePath = path.join(process.cwd(), 'public', 'menuContent.json'); // Adjust the path accordingly
-  // const menuContentData = JSON.parse(leftbarData);
-  switch (techStack) {
-    case "react":
-      return leftbarData.react;
-    case "javascript":
-      return leftbarData.javascript;
-      case "css":
-        return leftbarData.css;
-    // Add cases for other tech stacks if needed
-    default:
-      return []; // Return an empty array if the tech stack is not recognized
-  }
-}
 
 const SidebarLeft = () => {
-  const pathname = usePathname();
-  const pathParts = pathname.split('/');
-  const currentCategory = pathParts[pathParts.length - 1];
-  console.log(currentCategory)
-  // console.log(leftbarData)
 
+  //get the current url path
+  const pathname = usePathname();
+  const pathParts = pathname.split('/'); // spliting to get the last path name
+  const currentCategory = pathParts[pathParts.length - 1];
+
+console.log(currentCategory)
 
   // This tells which category leftbar data it should show
   const techStack = currentCategory; // Change this to "JavaScript" or other tech stacks as needed

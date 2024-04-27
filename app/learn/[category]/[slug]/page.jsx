@@ -57,7 +57,7 @@ const page = async () => {
           <SidebarLeft category={category} />
         </div>
         <div class="p-8 mx-auto w-full col-span-12 sm:col-span-8">
-          <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover" >
+          <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover prose-text-wrap" >
             <h1>{articleData.title}</h1>
             <PortableText
               value={articleData.Content}

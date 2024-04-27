@@ -6,11 +6,7 @@ import { getBlogCardData } from "@/lib/utils";
 export async function Landing() {
   const blogdata = await getBlogCardData();
   // console.log(blogdata)
-  const arr = blogdata.map((data, idx) => {
-    return data.title;
-  });
-  console.log(arr);
-  console.log(blogdata);
+
 
   return (
     <div className="flex flex-col min-h-[100dvh]">

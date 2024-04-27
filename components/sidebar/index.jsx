@@ -1,22 +1,21 @@
 "use client";
-import { usePathname } from "next/navigation"
 import SidebarItem from "./item";
 import {getMenuContent} from "@/lib/utils";
 
 
 
 
-const SidebarLeft = () => {
+const SidebarLeft = ({category}) => {
 
   //get the current url path
-  const pathname = usePathname();
-  const pathParts = pathname.split('/'); // spliting to get the last path name
-  const currentCategory = pathParts[pathParts.length - 1];
+//   const pathname = usePathname();
+//   const pathParts = pathname.split('/'); // spliting to get the last path name
+//   const currentCategory = pathParts[pathParts.length - 1];
 
-console.log(currentCategory)
+// console.log(currentCategory)
 
   // This tells which category leftbar data it should show
-  const techStack = currentCategory; // Change this to "JavaScript" or other tech stacks as needed
+  const techStack = category; // Change this to "JavaScript" or other tech stacks as needed
 
   //setting the leftbar according to the user hit the URL like if react then react leftbar, if js then js leftbar data
 const menuContent = getMenuContent(techStack) ;
@@ -28,7 +27,7 @@ const menuContent = getMenuContent(techStack) ;
       <h3 className="bg-gray-300 py-4 px-2 sticky top-0 z-30">Menu</h3>
         <div className="flex flex-col space-y-2">
           {menuContent.map((item, index) => (
-            <SidebarItem key={index} item={item}  currentCategoryURL={currentCategory} />
+            <SidebarItem key={index} item={item}  currentCategoryURL={techStack} />
           ))}
         </div>
       </div>

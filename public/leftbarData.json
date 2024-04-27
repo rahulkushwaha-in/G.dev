@@ -20,7 +20,7 @@
     },
     {
       "name": "React Intro",
-      "path": "/learn/react/what-is-react"
+      "path": "/react-intro"
     },
     {
       "name": "React Payment",
@@ -65,7 +65,7 @@
   ],
   "javascript": [
     {
-      "name": "JavaScript Dashboard",
+      "name": "JavaScript",
       "path": "/learn/javascript/dashboard"
     },
     {

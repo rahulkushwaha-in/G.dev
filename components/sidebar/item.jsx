@@ -10,12 +10,14 @@ const SidebarItem = ({ item, currentCategoryURL }) => {
   const [expanded, setExpanded] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  // console.log(pathname)
 
   const onClick = () => {
     if (items && items.length > 0) {
       return setExpanded(!expanded);
     }
 
+    // console.log(path)
     return router.push(path);
   };
   const isActive = useMemo(() => {

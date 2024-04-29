@@ -2,11 +2,11 @@
   "react": [
     {
       "name": "React Home",
-      "path": "/learn/react/react-tutorial"
+      "path": "learn/react/"
     },
     {
       "name": "React Intro",
-      "path": "/learn/react/react-intro"
+      "path": "learn/react/react-intro"
     },
     {
       "name": "React Get Started",
@@ -34,7 +34,7 @@
         },
         {
           "name": "ES6 Arrow Variables",
-          "path": "/learn/react/react-es6-arrow-variables"
+          "path": "/learn/react/react-es6-variables"
         },
         {
           "name": "ES6 Array Methods",
@@ -60,65 +60,9 @@
     },
     {
       "name": "React Render HTML",
-      "path": "/learn/react/react-render-html"
-      
-    },
-    {
-      "name": "React JSX",
-      "path": "/learn/react/react-jsx"
-      
-    },
-    {
-      "name": "React Components",
-      "path": "/learn/react/react-components"
-      
-    },
-    {
-      "name": "React Class",
-      "path": "/learn/react/react-class"
-      
-    },
-    {
-      "name": "React Events",
-      "path": "/learn/react/react-events"
-      
-    },
-    {
-      "name": "React Conditionals",
-      "path": "/learn/react/react-conditionals"
-      
-    },
-    {
-      "name": "React Lists",
-      "path": "/learn/react/react-lists"
-      
-    },
-    {
-      "name": "React Forms",
-      "path": "/learn/react/react-forms"
-      
-    },
-    {
-      "name": "React Router",
-      "path": "/learn/react/react-router"
-      
-    },
-    {
-      "name": "React Memo",
-      "path": "/learn/react/react-memo"
-      
-    },
-    {
-      "name": "React CSS Styling",
-      "path": "/learn/react/react-css-styling"
-      
-    },
-    {
-      "name": "React Sass Styling",
-      "path": "/learn/react/react-sass-styling"
+      "path": "/react/"
       
     }
-    
   ],
   "javascript": [
     {

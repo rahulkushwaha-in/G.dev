@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,13 +16,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Header></Header>
         <div className="min-h-[100dvh]">
         {children}
         </div>
         <SpeedInsights />
         <Footer/>
-
+        </ThemeProvider>
         </body>
     </html>
   );

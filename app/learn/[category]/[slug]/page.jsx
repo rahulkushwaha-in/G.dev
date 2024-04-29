@@ -9,12 +9,21 @@ import Link from "next/link";
 import CodeBlock from "@/components/CodeBlock";
 import Image from "next/image";
 
+// export async function getStaticProps({ params }) {
+//   const postData = await getIndividualArticleData(params.slug); // Fetch data for the specific post
+//   return {
+//     props: {
+//       postData
+//     }
+//   };
+// }
+
 const page = async () => {
   const params = useParams();
   const category = params.category;
   const slug = params.slug;
   const articleData = await getIndividualArticleData(slug);
-  console.log(articleData)
+  // console.log(articleData)
   const myPortableTextComponents = {
     block: {
       // Ex. 1: customizing common block types
@@ -51,13 +60,12 @@ const page = async () => {
 
   return (
     <>
-      <div class="grid grid-cols-12">
-        <div class=" sticky top-0 bg-red-500 hidden sm:block sm:col-span-2 h-screen overflow-y-scroll">
-          {" "}
+      <div className="grid grid-cols-12">
+        <div className=" sticky top-0 hidden sm:block sm:col-span-2 h-screen overflow-y-scroll">
           <SidebarLeft category={category} />
         </div>
-        <div class="p-8 mx-auto w-full col-span-12 sm:col-span-8">
-          <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover prose-text-wrap" >
+        <div className="p-8 mx-auto w-full col-span-12 sm:col-span-8">
+          <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover prose-text-wrap dark:prose-invert" >
             <h1>{articleData.title}</h1>
             <PortableText
               value={articleData.Content}
@@ -65,7 +73,7 @@ const page = async () => {
             ></PortableText>
           </div>
         </div>
-        <div class=" h-full bg-yellow-500 hidden sm:block col-span-2">3</div>
+        <div className=" h-full hidden sm:block col-span-2"></div>
       </div>
     </>
   );

@@ -2,9 +2,6 @@
 import SidebarItem from "./item";
 import {getMenuContent} from "@/lib/utils";
 
-
-
-
 const SidebarLeft = ({category}) => {
 
   //get the current url path
@@ -23,8 +20,9 @@ const menuContent = getMenuContent(techStack) ;
 
   return (
     <div>
-      <div className="flex flex-col space-y-6 w-full">
-      <h3 className="bg-gray-300 py-4 px-2 sticky top-0 z-30">Menu</h3>
+      <div className="flex flex-col space-y-6 w-full mb-8 ">
+        <div className="bg-gray-950 py-2 px-2 sticky top-0 z-30"><div className="text-white text-lg font-bold">{techStack.toUpperCase()} TUTORIAL </div></div>
+      
         <div className="flex flex-col space-y-2">
           {menuContent.map((item, index) => (
             <SidebarItem key={index} item={item}  currentCategoryURL={techStack} />

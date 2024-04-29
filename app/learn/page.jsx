@@ -9,13 +9,19 @@ const Learn = () => {
   // uske bad {main content } wale section mei article dikha dena h
 
   return (
-    <div className="flex">
-      <div className="bg-gray-200 h-screen w-52 flex flex-col overflow-y-scroll z:1 absolute lg:relative">
-        <SidebarLeft />
+    <>
+      <div className="grid grid-cols-12">
+        <div className="sticky top-0 hidden sm:block sm:col-span-2 h-screen overflow-y-scroll">
+        <SidebarLeft category={"react"} />
+        </div>
+        <div className="p-8 mx-auto w-full col-span-12 sm:col-span-8">
+          <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover prose-text-wrap dark:prose-invert">
+            <h1>Explore Tutorials</h1>
+          </div>
+        </div>
+        <div className=" h-full hidden sm:block col-span-2"></div>
       </div>
-      <div className="flex-1 bg-gray-100 p-8">Main Content Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum accusamus velit impedit dolorem possimus modi rem, rerum autem culpa, vel quidem minus ea. Ut iste, beatae repellendus voluptatum ratione commodi blanditiis dolore iure saepe omnis ducimus esse? Aspernatur aut ea nemo, deserunt repellendus dolorum alias molestias ratione voluptate sapiente inventore ducimus veniam ab minus suscipit autem laudantium magni earum consequatur. Explicabo, molestias! Molestias, nulla ea. Cupiditate blanditiis molestias quibusdam quas corrupti! Totam quidem eaque assumenda ipsum molestiae, neque facere voluptatum minima sint ducimus quis possimus inventore pariatur doloribus. Ipsam ad amet non nulla nisi temporibus numquam, corrupti sed eius error!</div>
-      <div className=" bg-gray-200 h-screen w-52">Empty Space</div>
-    </div>
+    </>
   );
 };
 

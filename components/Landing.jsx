@@ -7,29 +7,28 @@ export async function Landing() {
   const blogdata = await getBlogCardData();
   // console.log(blogdata)
 
-
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
-        <section className="bg-gray-950 text-gray-50 py-10 md:py-15 lg:py-20">
+        <section className=" py-10 md:py-15 lg:py-20">
           <div className="w-full px-4 md:px-6 grid gap-8 md:gap-12 lg:grid-cols-2 items-center justify-center">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 Learn the Latest Tech Stacks
               </h1>
-              <p className="text-gray-300 max-w-[600px] text-lg md:text-xl">
+              <p className=" max-w-[600px] text-lg md:text-xl">
                 Dive into our extensive collection of tutorials covering the
                 hottest technologies, frameworks, and languages.
               </p>
               <div className="flex gap-4">
                 <Link
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-gray-50 px-6 text-sm font-medium text-gray-950 shadow transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                  href="#"
+                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200  px-6 text-sm font-medium hover:text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800"
+                  href="/learn"
                 >
                   Get Started
                 </Link>
                 <Link
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-transparent px-6 text-sm font-medium text-gray-50 shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800"
+                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200  px-6 text-sm font-medium hover:text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800"
                   href="#"
                 >
                   Explore Tutorials
@@ -52,7 +51,7 @@ export async function Landing() {
           </div>
         </section>
         {/* Featured Blog Section */}
-        <section className="py-12 md:py-24 lg:py-32">
+        <section className="py-12 md:py-16 lg:py-24">
           <div className="w-full px-4 md:px-6 space-y-8 md:space-y-12">
             <div className="text-center space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -207,21 +206,21 @@ export async function Landing() {
                 </CardContent>
               </Card>
               {/* Testing Backend Data */}
-              {blogdata &&
+              {/* {blogdata &&
                 blogdata.map((post, idx) => {
                   return (
                     <Card>
                       <CardHeader>
-                      <img
-                    alt="Vue.js Tutorial"
-                    className="rounded-t-lg w-full h-auto"
-                    src={`${urlForImage(post.mainImage)}`}
-                    style={{
-                      aspectRatio: "400/200",
-                      objectFit: "cover",
-                    }}
-                    width={400}
-                  />
+                        <img
+                          alt="Vue.js Tutorial"
+                          className="rounded-t-lg w-full h-auto"
+                          src={`${urlForImage(post.mainImage)}`}
+                          style={{
+                            aspectRatio: "400/200",
+                            objectFit: "cover",
+                          }}
+                          width={400}
+                        />
                       </CardHeader>
                       <CardContent className="p-6 space-y-3">
                         <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -234,20 +233,21 @@ export async function Landing() {
                         </p>
                         <Link
                           className="inline-flex items-center gap-2 font-medium text-gray-950 hover:underline dark:text-red-50"
-                          href={`learn/${post.currentSlug}`}>
+                          href={`learn/${post.currentSlug}`}
+                        >
                           Read More
                           <ArrowRightIcon className="h-4 w-4" />
                         </Link>
                       </CardContent>
                     </Card>
                   );
-                })}
+                })} */}
             </div>
           </div>
         </section>
 
         {/* Explore Blog section */}
-        <section className="bg-gray-950 text-gray-50 py-12 md:py-24 lg:py-32">
+        <section className=" py-12 md:py-16 lg:py-16">
           <div className="container px-4 md:px-6 grid gap-8 md:gap-12 lg:grid-cols-2 items-center justify-center">
             <div className="flex justify-center">
               <img
@@ -266,7 +266,7 @@ export async function Landing() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Explore Our Blog
               </h2>
-              <p className="text-gray-300 max-w-[600px] text-lg md:text-xl">
+              <p className=" max-w-[600px] text-lg md:text-xl">
                 Stay up-to-date with the latest trends, insights, and
                 developments in the tech world by reading our blog.
               </p>
@@ -281,13 +281,13 @@ export async function Landing() {
         </section>
 
         {/* why learn from GeeksforGeeks.dev */}
-        <section className="bg-gray-950 text-gray-50 py-10 md:py-15 lg:py-20">
+        <section className="py-10 md:py-12 lg:py-16">
           <div className="w-full px-4 md:px-6 grid gap-8 md:gap-12 lg:grid-cols-2 items-center justify-center">
             <div className="space-y-4">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-5xl">
                 Why GeeksforGeeks.dev?
               </h1>
-              <p className="text-gray-300 max-w-[600px] text-lg md:text-xl">
+              <p className="max-w-[600px] text-lg md:text-xl">
                 Our tech tutorials are designed to help you stay ahead of the
                 curve and master the latest technologies. Whether you're a
                 beginner or an experienced developer, our tutorials cover a wide
@@ -295,13 +295,13 @@ export async function Landing() {
               </p>
               <div className="flex gap-4">
                 <Link
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-gray-50 px-6 text-sm font-medium text-gray-950 shadow transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200  px-6 text-sm font-medium hover:text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800"
                   href="#"
                 >
                   Explore Tutorials
                 </Link>
                 <Link
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-transparent px-6 text-sm font-medium text-gray-50 shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800"
+                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200  px-6 text-sm font-medium hover:text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800"
                   href="#"
                 >
                   Contact Us

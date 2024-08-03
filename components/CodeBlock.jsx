@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const CodeBlock = ({ language, code, filename }) => {
   const [copied, setCopied] = useState(false);
@@ -10,8 +10,8 @@ const CodeBlock = ({ language, code, filename }) => {
     ...vscDarkPlus,
     // Override specific colors
     'code[class*="language-"]': {
-      color: '#f8f8f2',
-      fontSize: '16px', // Adjust the font size as needed
+      color: "#f8f8f2",
+      fontSize: "16px", // Adjust the font size as needed
     },
   };
 
@@ -39,23 +39,30 @@ const CodeBlock = ({ language, code, filename }) => {
             <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
           </svg>
-          <span className="text-green-600 font-bold dark:text-gray-500">{filename}</span>
+          <span className="text-green-600 font-bold dark:text-gray-500">
+            {filename}
+          </span>
           <span className="text-gray-800 dark:text-gray-500">|</span>
-          <span className="text-gray-800 font-bold dark:text-gray-500">{language.toUpperCase()}</span>
+          <span className="text-gray-800 font-bold dark:text-gray-500">
+            {language.toUpperCase()}
+          </span>
         </div>
         <div className="flex items-center gap-2">
           <CopyToClipboard text={code} onCopy={handleCopy}>
             <button className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-1 px-3 rounded">
-              {copied ? 'Copied!' : 'Copy'}
+              {copied ? "Copied!" : "Copy"}
             </button>
           </CopyToClipboard>
         </div>
       </div>
       <div className="p-4 pt-2  border max-h-96 sm:max-h-dvh overflow-auto">
-      <SyntaxHighlighter language={language} style={customTheme} 
-        wrapLongLines={true}>
-        {code}
-      </SyntaxHighlighter>
+        <SyntaxHighlighter
+          language={language}
+          style={customTheme}
+          wrapLongLines={true}
+        >
+          {code}
+        </SyntaxHighlighter>
       </div>
     </div>
   );

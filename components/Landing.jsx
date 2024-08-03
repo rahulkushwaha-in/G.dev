@@ -3,11 +3,19 @@ import { urlForImage } from "@/sanity/lib/image";
 import { CardHeader, CardContent, Card } from "@/components/ui/card";
 import { getBlogCardData } from "@/lib/utils";
 
+ 
+export const Metadata = {
+  title: '...',
+  description: '...',
+}
+
 export async function Landing() {
-  const blogdata = await getBlogCardData();
+  // const blogdata = await getBlogCardData();
   // console.log(blogdata)
 
   return (
+    <>
+
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
         <section className=" py-10 md:py-15 lg:py-20">
@@ -40,10 +48,10 @@ export async function Landing() {
                 alt="Hero Image"
                 className="rounded-lg"
                 height={400}
-                src="https://www.technewsworld.com/wp-content/uploads/sites/3/2024/04/passkey.jpg"
+                src="https://cdn.mindmajix.com/blog/images/reactjs-tutorial-2907.png"
                 style={{
                   aspectRatio: "600/400",
-                  objectFit: "cover",
+                 objectFit:"cover cover"
                 }}
                 width={600}
               />
@@ -254,7 +262,7 @@ export async function Landing() {
                 alt="Blog Image"
                 className="rounded-lg"
                 height={400}
-                src="https://www.vmware.com/content/dam/digitalmarketing/events/vmware-explore/2024/global/vmwx24-preview-bnr.jpg"
+                src="https://cdn.pixabay.com/photo/2019/04/15/11/12/why-4129050_640.jpg"
                 style={{
                   aspectRatio: "600/400",
                   objectFit: "cover",
@@ -324,6 +332,7 @@ export async function Landing() {
         </section>
       </main>
     </div>
+    </>
   );
 }
 

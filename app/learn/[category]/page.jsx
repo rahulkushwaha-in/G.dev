@@ -2,10 +2,63 @@
 import SidebarLeft from "@/components/sidebar";
 import React from "react";
 import { useParams } from "next/navigation";
+import { useEffect } from "react";
+
+
+
+// Helper function to update meta tags
+const updateMetaTag = (name, content) => {
+  let meta = document.querySelector(`meta[name="${name}"]`);
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.setAttribute('name', name);
+    document.head.appendChild(meta);
+  }
+  meta.setAttribute('content', content);
+};
+
+// Helper function to update meta properties
+const updateMetaProperty = (property, content) => {
+  let meta = document.querySelector(`meta[property="${property}"]`);
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.setAttribute('property', property);
+    document.head.appendChild(meta);
+  }
+  meta.setAttribute('content', content);
+};
 
 const CategoryPage = () => {
   const params = useParams();
   const category = params.category;
+ 
+
+  useEffect(() => {
+    const categoryTitle = category ? `${category.charAt(0).toUpperCase() + category.slice(1)} - GeeksforGeeks.Dev` : "Browse Categories - GeeksforGeeks.Dev";
+    const categoryDescription = `Explore comprehensive ${category || 'articles'} covering a wide range of topics on GeeksforGeeks.Dev. Dive deep into our ${category || 'diverse categories'} to enhance your knowledge and skills.`;
+
+    // Update the document title
+    document.title = categoryTitle;
+
+    // Standard meta tags
+    updateMetaTag('description', categoryDescription);
+    updateMetaTag('viewport', 'width=device-width, initial-scale=1');
+    updateMetaTag('robots', 'index, follow');
+
+    // Open Graph meta tags
+    updateMetaProperty('og:title', categoryTitle);
+    updateMetaProperty('og:description', categoryDescription);
+    updateMetaProperty('og:image', "/default-category-image.jpg"); // Update with your default or dynamic image path
+    updateMetaProperty('og:type', 'website');
+
+    // Twitter Card meta tags
+    updateMetaProperty('twitter:card', 'summary_large_image');
+    updateMetaProperty('twitter:title', categoryTitle);
+    updateMetaProperty('twitter:description', categoryDescription);
+    updateMetaProperty('twitter:image', "/default-category-image.jpg"); // Similarly, update as needed
+
+  }, [category]);
+
 
   return (
     <>

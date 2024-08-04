@@ -1,3 +1,18 @@
+export const metadata = {
+  title: 'About Us',
+  description: 'Learn more about GeeksforGeeks.Dev, your ultimate tech resource hub. Discover our mission, values, and the team behind our content.',
+  og: {
+    title: 'About Us - GeeksforGeeks.Dev',
+    description: 'Learn about our mission, values, and team at GeeksforGeeks.Dev.',
+    image: 'https://geeksforgeeks.dev/about-og-image.jpg',
+  },
+  twitter: {
+    title: 'About Us - GeeksforGeeks.Dev',
+    description: 'Learn about our mission, values, and team at GeeksforGeeks.Dev.',
+    image: 'https://geeksforgeeks.dev/about-twitter-image.jpg',
+  }
+}
+
 export default function(){
     return (
         <>

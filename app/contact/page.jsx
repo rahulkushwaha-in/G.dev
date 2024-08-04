@@ -1,3 +1,18 @@
+export const metadata = {
+  title:'Contact Us',
+  description: 'Reach out to us at GeeksforGeeks.Dev for inquiries, support, or feedback. Find all the ways you can contact our team here.',
+  og: {
+    title: 'Contact Us - GeeksforGeeks.Dev',
+    description: 'Get in touch with us for any inquiries, support, or feedback.',
+    image: 'https://geeksforgeeks.dev/contact-og-image.jpg',
+  },
+  twitter: {
+    title: 'Contact Us - GeeksforGeeks.Dev',
+    description: 'Get in touch with us for any inquiries, support, or feedback.',
+    image: 'https://geeksforgeeks.dev/contact-twitter-image.jpg',
+  }
+}
+
 export default function(){
     return (
        <>

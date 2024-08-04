@@ -2,16 +2,13 @@ import {fetchSlugs} from '@/lib/utils'
 
 export default async function sitemap() {
     const allSlugs = await fetchSlugs();
+    console.log(allSlugs, allSlugs.length)
     return [
         ...allSlugs.map(data => ({
             url: `https://www.geeksforgeeks.dev/learn/${data.category}/${data.slug}`,
-            lastmod: dateAndTime(data.updated_Date),
-            changefreq: 'daily',
+            lastModified: dateAndTime(data.updated_Date),
+            changeFrequency: 'daily',
             priority: 1,
-            links: [
-                { rel: 'alternate', hreflang: 'en', href: `https://www.geeksforgeeks.dev/learn/${data.category}/${data.slug}` },
-                { rel: 'alternate', hreflang: 'es', href: `https://es.geeksforgeeks.dev/learn/${data.category}/${data.slug}` }
-            ]
         }))
     ]
 }

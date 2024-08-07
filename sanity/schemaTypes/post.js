@@ -77,6 +77,10 @@ export const post = {
         ]
       },
       {
+        type:'table',
+        title:'Add Table'
+      },
+      {
         type:'image',
         title:'Add Images'
       },
@@ -85,7 +89,7 @@ export const post = {
         title: "Code Block",
         type: "code",
         options: {
-          withFilename: true, // optional
+          withFilename: false, // optional
           highlightedLines: true, // optional
         },
       }

@@ -153,7 +153,7 @@ const Page = () => {
         </div>
         <div className="p-8 mx-auto w-full col-span-12 sm:col-span-8">
           <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover prose-text-wrap dark:prose-invert">
-            <h1>{articleData.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">{articleData.title}</h1>
             <PortableText
               value={articleData.Content}
               components={{
@@ -173,12 +173,16 @@ const Page = () => {
                     />
                   ),
                   image: ({ value }) => (
+                    <div className="w-full max-w-screen-lg mx-auto">
                     <Image
                       src={urlForImage(value)}
-                      width={700}
-                      height={700}
+                      layout="responsive"
+                      width={1200}
+                      height={800}
                       alt={value.alt || "Article image"}
+                      className="object-cover"
                     />
+                  </div>
                   ),
                 },
                 marks: {

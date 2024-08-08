@@ -89,7 +89,7 @@ export const post = {
         title: "Code Block",
         type: "code",
         options: {
-          withFilename: false, // optional
+          withFilename: true, // optional
           highlightedLines: true, // optional
         },
       }

@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const CodeBlock = ({ language, code, filename }) => {
   const [copied, setCopied] = useState(false);
   const customTheme = {
-    ...vscDarkPlus,
+    ...oneDark,
     // Override specific colors
     'code[class*="language-"]': {
       color: "#f8f8f2",
@@ -18,13 +18,13 @@ const CodeBlock = ({ language, code, filename }) => {
 
   const handleCopy = () => {
     setCopied(true);
-    setTimeout(() => setCopied(false), 1000);
+    setTimeout(() => setCopied(false), 600);
   };
 
   return (
-    <div className=" w-full rounded-lg border border bg-gray-100 dark:border-gray-800 overflow-hidden">
+    <div className=" w-full border border-none overflow-hidden">
       <div className="bg-gray-100 dark:bg-gray-800 px-4 py-2 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-500 dark:white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -40,12 +40,12 @@ const CodeBlock = ({ language, code, filename }) => {
             <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
           </svg>
-          <span className="text-green-600 font-bold dark:text-gray-500">
+          <span className="text-green-600 font-bold dark:text-white">
             {filename}
           </span>
-          <span className="text-gray-800 dark:text-gray-500">|</span>
-          <span className="text-gray-800 font-bold dark:text-gray-500">
-            {language.toUpperCase()}
+          <span className="text-gray-400 dark:text-white">|</span>
+          <span className="text-gray-800 font-bold dark:text-white">
+            {language}
           </span>
         </div>
         <div className="flex items-center gap-2">
@@ -56,7 +56,7 @@ const CodeBlock = ({ language, code, filename }) => {
           </CopyToClipboard>
         </div>
       </div>
-      <div className="p-4 pt-2  border max-h-96 sm:max-h-dvh overflow-auto">
+      <div className="pl-1 pr-1 border max-h-96 sm:max-h-dvh overflow-auto">
         <SyntaxHighlighter
           language={language}
           style={customTheme}

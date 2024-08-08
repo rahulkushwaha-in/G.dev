@@ -21,6 +21,9 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        darkPrimary: '#e0e0e0', // Light gray for primary text
+        darkSecondary: '#b0b0b0', // Slightly darker gray for secondary text
+        darkLink: '#82aaff', // Softer blue for links
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         sidebar: {

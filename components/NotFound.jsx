@@ -1,6 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
-
+import React from 'react';
 const NotFound = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-gray-800 p-4">

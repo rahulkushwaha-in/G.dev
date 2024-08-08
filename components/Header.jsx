@@ -43,31 +43,31 @@ export default function Header() {
               Tutorial
             </Link>
             <Link
-              href="#"
+              href="/blogs"
               className="text-white hover:underline"
             >
               Blogs
             </Link>
             <Link
-              href="#"
+              href="/about"
               className="text-white hover:underline"
             >
               About
             </Link>
             <Link
-              href="#"
+              href="contact"
               className="text-white hover:underline"
             >
               Contact
             </Link>
             <Link
-              href="#"
+              href="roadmaps"
               className="text-white hover:underline"
             >
-              Roadmap
+              Roadmaps
             </Link>
             <Link
-              href="#"
+              href="tools"
               className="text-white hover:underline"
             >
               Tools

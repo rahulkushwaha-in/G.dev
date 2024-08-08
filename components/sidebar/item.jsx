@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
 import SubMenuItem from "./sub-item";
+import Link from "next/link";
 
 const SidebarItem = ({ item }) => {
   const { name, items, path } = item;

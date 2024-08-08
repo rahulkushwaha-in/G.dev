@@ -1,28 +1,23 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useMemo } from "react";
-
 
 const SubMenuItem = ({ item }) => {
   const { name, path } = item;
-  const router = useRouter();
   const pathname = usePathname();
-
-  const onClick = () => {
-    router.push(path);
-  };
 
   const isActive = useMemo(() => path === pathname, [path, pathname]);
 
   return (
-    <div
-      className={`text-sm mr-6 hover:text-sidebar-active hover:font-semibold cursor-pointer ${
+    <Link
+      href={path}
+      className={`text-sm mr-6 hover:text-sidebar-active hover:font-semibold ${
         isActive ? "text-sidebar-active font-semibold" : ""
       }`}
-      onClick={onClick}
     >
       {name}
-    </div>
+    </Link>
   );
 };
 

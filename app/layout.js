@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from "@/components/theme-provider"
+import NextTopLoader from "nextjs-toploader";
+import ScrollToTop from "@/components/ScrollToTop";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -85,6 +88,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <NextTopLoader
+        color="linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(7,231,13,1) 100%)"
+        initialPosition={0.08}
+        crawlSpeed={300}
+        height={5}
+        crawl={true}
+        showSpinner={false}
+        easing="ease-in-out"
+        speed={500}
+        shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+        />
       <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -92,13 +106,18 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
         <Header></Header>
+        
         <div className="min-h-[100dvh]">
         {children}
         </div>
         <SpeedInsights />
+        <ScrollToTop/>
         <Footer/>
         </ThemeProvider>
         </body>
     </html>
   );
 }
+
+
+

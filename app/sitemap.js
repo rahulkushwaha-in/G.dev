@@ -12,6 +12,8 @@ export default async function sitemap() {
         { url: 'https://www.geeksforgeeks.dev/roadmaps', lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
         { url: 'https://www.geeksforgeeks.dev/tools', lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
         { url: 'https://www.geeksforgeeks.dev/blogs', lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
+        { url: 'https://www.geeksforgeeks.dev/privacy-policy', lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
+        { url: 'https://www.geeksforgeeks.dev/terms-of-service', lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
         // Add other static pages here
       ];
     return [

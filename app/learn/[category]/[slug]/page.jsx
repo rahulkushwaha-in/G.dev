@@ -11,6 +11,7 @@ import SidebarLeft from "@/components/sidebar";
 import Loader from "@/components/Loader/Loader";
 import Head from "next/head";
 import NotFound from "@/components/NotFound";
+import ScrollProgressBar from "@/components/ScrollProgressBar/ScrollProgressBar";
 
 const Page = () => {
   const { slug, category } = useParams();
@@ -147,11 +148,12 @@ const Page = () => {
           }
         />
       </Head>
+      <ScrollProgressBar articleId="blog-container"/>
       <div className="grid grid-cols-12">
         <div className="sticky top-0 hidden sm:block sm:col-span-2 h-screen overflow-y-scroll">
           <SidebarLeft category={category} />
         </div>
-        <div className="p-8 mx-auto w-full col-span-12 sm:col-span-8">
+        <div id="blog-container" className="p-8 mx-auto w-full col-span-12 sm:col-span-8">
           <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover prose-text-wrap dark:prose-invert">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">{articleData.title}</h1>
             <PortableText

@@ -222,8 +222,8 @@
   ],
   "typescript":[
         {
-          "name": "Introduction to TypeScript",
-          "path": "/learn/typescript/introduction-to-typescript"
+          "name": "TypeScript Introduction",
+          "path": "/learn/typescript/typescript-introduction"
         },
         {
           "name": "What is TypeScript?",

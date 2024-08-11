@@ -138,55 +138,62 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`${
-            isOpen ? "block" : "hidden"
-          } md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-40`}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link
-              href="/"
-              className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Home
-            </Link>
-            <Link
-              href="/learn"
-              className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Tutorials
-            </Link>
-            <Link
-              href="/blogs"
-              className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Blogs
-            </Link>
-            <Link
-              href="/roadmaps"
-              className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              RoadMaps
-            </Link>
-            <Link
-              href="/tools"
-              className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Tools
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
+  className={`${
+    isOpen ? "block" : "hidden"
+  } md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-40`}
+>
+  <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+    <Link
+      href="/"
+      className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+      onClick={() => setIsOpen(false)}  // Close menu on click
+    >
+      Home
+    </Link>
+    <Link
+      href="/learn"
+      className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+      onClick={() => setIsOpen(false)}  // Close menu on click
+    >
+      Tutorials
+    </Link>
+    <Link
+      href="/blogs"
+      className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+      onClick={() => setIsOpen(false)}  // Close menu on click
+    >
+      Blogs
+    </Link>
+    <Link
+      href="/roadmaps"
+      className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+      onClick={() => setIsOpen(false)}  // Close menu on click
+    >
+      RoadMaps
+    </Link>
+    <Link
+      href="/tools"
+      className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+      onClick={() => setIsOpen(false)}  // Close menu on click
+    >
+      Tools
+    </Link>
+    <Link
+      href="/about"
+      className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+      onClick={() => setIsOpen(false)}  // Close menu on click
+    >
+      About
+    </Link>
+    <Link
+      href="/contact"
+      className="text-gray-900 dark:text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+      onClick={() => setIsOpen(false)}  // Close menu on click
+    >
+      Contact
+    </Link>
+  </div>
+</div>
       </nav>
     </>
   );

@@ -10,8 +10,7 @@ export const Metadata = {
 }
 
 export async function Landing() {
-  // const blogdata = await getBlogCardData();
-  // console.log(blogdata)
+
 
   return (
     <>

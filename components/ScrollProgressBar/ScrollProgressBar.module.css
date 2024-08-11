@@ -15,7 +15,7 @@
     width: 0%;
     background: linear-gradient(90deg, #2193b0, #6dd5ed);
     transition: width 0.5s cubic-bezier(0.4, 0.0, 0.2, 1), background 0.5s ease;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
     box-shadow: 0 0 8px rgba(13, 143, 218, 0.6), 0 0 4px rgba(216, 4, 156, 0.6);
 }
 

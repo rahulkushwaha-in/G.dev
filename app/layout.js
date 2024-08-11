@@ -7,7 +7,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 import NextTopLoader from "nextjs-toploader";
 import ScrollToTop from "@/components/ScrollToTop";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Iframe from '@/components/Iframe';
 
 
 export const metadata = {
@@ -23,7 +24,10 @@ export const metadata = {
 
 const Tools = () => {
   return (
-    <div>Tools</div>
+    <div>
+      <iframe src="https://roadmap.sh/r/embed?id=661ec0c3339f6036540fc79e" width="100%" height="1600px" frameBorder="0"></iframe>
+      {/* <Iframe src="https://roadmap.sh/r/embed?id=661ec0c3339f6036540fc79e" title="My Iframe" /> */}
+    </div>
   )
 }
 

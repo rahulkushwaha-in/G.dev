@@ -21,7 +21,7 @@ const menuContent = getMenuContent(techStack) ;
   return (
     <div>
       <div className="flex flex-col space-y-6 w-full mb-8 ">
-        <div className="bg-gray-950 pt-6 px-2 sticky top-0 z-30"><div className="text-white text-sm font-bold">{techStack.toUpperCase()} TUTORIAL </div></div>
+        <div className="bg-gray-400 pt-4 dark:bg-gray-950 px-2 sticky top-0 z-30"><div className="text-white text-sm font-bold">{techStack.toUpperCase()} TUTORIAL </div></div>
       
         <div className="flex flex-col space-y-2">
           {menuContent.map((item, index) => (

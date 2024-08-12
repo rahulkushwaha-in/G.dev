@@ -74,6 +74,22 @@
       @apply bg-background text-foreground;
     }
   }
+
+  /* code {
+    @apply p-1 border-2 rounded-md bg-gray-100 border-gray-300 text-gray-900;
+  }
+  
+  .dark code {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+  } */
+
+  code::before, code::after {
+    content:normal !important;
+  }
+  code {
+    /* display: inline-block; Ensures it doesn't break the flow     */
+  }
+  
   /* Custom Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 8px;

@@ -237,7 +237,7 @@ const Hero = () => {
                 href={article.link}
                 className="block bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-700 dark:text-white"
                 whileHover={{ scale: 1.05 }}
-                target="_blank"
+                
               >
                 <img
                   src={article.image}

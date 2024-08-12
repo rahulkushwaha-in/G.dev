@@ -12,6 +12,18 @@ import Loader from "@/components/Loader/Loader";
 import Head from "next/head";
 import NotFound from "@/components/NotFound";
 import ScrollProgressBar from "@/components/ScrollProgressBar/ScrollProgressBar";
+import CodeWithNotes from "@/components/CodeWithNotes";
+// This could be based on an identifier, the content of the code, index, or any other logic
+const notes = {
+  "packagejson": "This is a detailed explanation of the package.json file.",
+  "tsconfigjson": "This is a detailed explanation of the tsconfig.json file"
+};
+
+// Sample code blocks
+const codeBlocks = [
+  { id: "packagejson", code: "tsconfig.json" },
+  { id: "tsconfigjson", code: "package.json" }
+];
 
 const Page = () => {
   const { slug, category } = useParams();
@@ -52,9 +64,9 @@ const Page = () => {
       const updateMetaTag = (name, content) => {
         let meta = document.querySelector(`meta[name="${name}"]`);
         if (!meta) {
-          meta = document.createElement('meta');
+          meta = document.createElement("meta");
           meta.name = name;
-          document.getElementsByTagName('head')[0].appendChild(meta);
+          document.getElementsByTagName("head")[0].appendChild(meta);
         }
         meta.content = content;
       };
@@ -63,33 +75,43 @@ const Page = () => {
       const updateMetaProperty = (property, content) => {
         let meta = document.querySelector(`meta[property="${property}"]`);
         if (!meta) {
-          meta = document.createElement('meta');
-          meta.setAttribute('property', property);
-          document.getElementsByTagName('head')[0].appendChild(meta);
+          meta = document.createElement("meta");
+          meta.setAttribute("property", property);
+          document.getElementsByTagName("head")[0].appendChild(meta);
         }
         meta.content = content;
       };
 
       // Standard meta tags
-      updateMetaTag('description', articleData.smallDescription);
-      updateMetaTag('viewport', 'width=device-width, initial-scale=1');
-      updateMetaTag('robots', 'index, follow');
+      updateMetaTag("description", articleData.smallDescription);
+      updateMetaTag("viewport", "width=device-width, initial-scale=1");
+      updateMetaTag("robots", "index, follow");
 
       // Open Graph meta tags
-      updateMetaProperty('og:title', articleData.title);
-      updateMetaProperty('og:description', articleData.smallDescription);
-      updateMetaProperty('og:image', articleData.image ? urlForImage(articleData.image).url() : "/default-image.jpg");
-      updateMetaProperty('og:type', 'article');
+      updateMetaProperty("og:title", articleData.title);
+      updateMetaProperty("og:description", articleData.smallDescription);
+      updateMetaProperty(
+        "og:image",
+        articleData.image
+          ? urlForImage(articleData.image).url()
+          : "/default-image.jpg"
+      );
+      updateMetaProperty("og:type", "article");
 
       // Twitter Card meta tags
-      updateMetaProperty('twitter:card', 'summary_large_image');
-      updateMetaProperty('twitter:title', articleData.title);
-      updateMetaProperty('twitter:description', articleData.smallDescription);
-      updateMetaProperty('twitter:image', articleData.image ? urlForImage(articleData.image).url() : "/default-image.jpg");
+      updateMetaProperty("twitter:card", "summary_large_image");
+      updateMetaProperty("twitter:title", articleData.title);
+      updateMetaProperty("twitter:description", articleData.smallDescription);
+      updateMetaProperty(
+        "twitter:image",
+        articleData.image
+          ? urlForImage(articleData.image).url()
+          : "/default-image.jpg"
+      );
 
       // Additional tags as needed (e.g., author, publisher)
-      updateMetaTag('author', 'GeeksforGeeks.Dev');
-      updateMetaTag('publisher', 'GeeksforGeeks.Dev');
+      updateMetaTag("author", "GeeksforGeeks.Dev");
+      updateMetaTag("publisher", "GeeksforGeeks.Dev");
     }
   }, [articleData]);
 
@@ -109,7 +131,11 @@ const Page = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content={articleData ? articleData.smallDescription : "At GeeksforGeeks.Dev, we cover everything tech. From detailed tutorials and the latest tech news to essential roadmaps and innovative tools, we provide the resources you need to navigate the tech landscape."}
+          content={
+            articleData
+              ? articleData.smallDescription
+              : "At GeeksforGeeks.Dev, we cover everything tech. From detailed tutorials and the latest tech news to essential roadmaps and innovative tools, we provide the resources you need to navigate the tech landscape."
+          }
         />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -119,7 +145,11 @@ const Page = () => {
         />
         <meta
           property="og:description"
-          content={articleData ? articleData.smallDescription : "At GeeksforGeeks.Dev, we cover everything tech. From detailed tutorials and the latest tech news to essential roadmaps and innovative tools, we provide the resources you need to navigate the tech landscape."}
+          content={
+            articleData
+              ? articleData.smallDescription
+              : "At GeeksforGeeks.Dev, we cover everything tech. From detailed tutorials and the latest tech news to essential roadmaps and innovative tools, we provide the resources you need to navigate the tech landscape."
+          }
         />
         <meta
           property="og:image"
@@ -137,7 +167,11 @@ const Page = () => {
         />
         <meta
           name="twitter:description"
-          content={articleData ? articleData.smallDescription : "At GeeksforGeeks.Dev, we cover everything tech. From detailed tutorials and the latest tech news to essential roadmaps and innovative tools, we provide the resources you need to navigate the tech landscape."}
+          content={
+            articleData
+              ? articleData.smallDescription
+              : "At GeeksforGeeks.Dev, we cover everything tech. From detailed tutorials and the latest tech news to essential roadmaps and innovative tools, we provide the resources you need to navigate the tech landscape."
+          }
         />
         <meta
           name="twitter:image"
@@ -148,14 +182,19 @@ const Page = () => {
           }
         />
       </Head>
-      <ScrollProgressBar articleId="blog-container"/>
+      <ScrollProgressBar articleId="blog-container" />
       <div className="grid grid-cols-12">
         <div className="sticky top-0 hidden sm:block sm:col-span-2 h-screen overflow-y-scroll">
           <SidebarLeft category={category} />
         </div>
-        <div id="blog-container" className="p-8 mx-auto w-full col-span-12 sm:col-span-8">
+        <div
+          id="blog-container"
+          className="p-8 mx-auto w-full col-span-12 sm:col-span-8"
+        >
           <div className="max-w-full prose prose-blue prose-lg prose-li:marker:text-blue-500 prose-img:rounded prose-img:m-auto prose-img:object-cover prose-text-wrap dark:prose-invert">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">{articleData.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">
+              {articleData.title}
+            </h1>
             <PortableText
               value={articleData.Content}
               components={{
@@ -176,15 +215,15 @@ const Page = () => {
                   ),
                   image: ({ value }) => (
                     <div className="w-full max-w-screen-lg mx-auto">
-                    <Image
-                      src={urlForImage(value)}
-                      layout="responsive"
-                      width={1200}
-                      height={800}
-                      alt={value.alt || "Article image"}
-                      className="object-cover"
-                    />
-                  </div>
+                      <Image
+                        src={urlForImage(value)}
+                        layout="responsive"
+                        width={1200}
+                        height={800}
+                        alt={value.alt || `${articleData.title}`}
+                        className="object-cover"
+                      />
+                    </div>
                   ),
                 },
                 marks: {
@@ -199,6 +238,18 @@ const Page = () => {
                     >
                       {children}
                     </Link>
+                  ),
+                  code: ({ children }) => (
+                    <code className="inline-block p-1/2 pl-1 pr-1 border-2 rounded-md bg-gray-100 border-gray-300 text-gray-900 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100">
+                       {/* {codeBlocks.map((block, index) => (
+                <CodeWithNotes
+                    key={index}
+                    code={block.code}
+                    note={notes[block.id] || "No additional notes available."}
+                >{children}</CodeWithNotes>
+            ))} */}
+                      <CodeWithNotes  note="Details about JSON handling. Details about JSON handling.Details about JSON handling.Details about JSON handling.Details about JSON handling.Details about JSON handling.Details about JSON handling.Details about JSON handling.Details about JSON handling.Details about JSON handling.Details about JSON handling.">{children}</CodeWithNotes>
+                    </code>
                   ),
                 },
               }}

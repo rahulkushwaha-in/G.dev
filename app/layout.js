@@ -6,7 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from "@/components/theme-provider"
 import NextTopLoader from "nextjs-toploader";
 import ScrollToTop from "@/components/ScrollToTop";
-
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -86,6 +86,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+        <Script id="next"
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=G-T0D68EHC4S`}>
+            </Script>
+            <Script id="next">
+                {
+                    `window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-T0D68EHC4S');`
+                }
+            </Script>
+            <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593264837587690"
+     crossorigin="anonymous"></Script>
       <body className={inter.className}>
         <NextTopLoader
         color="linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(7,231,13,1) 100%)"
